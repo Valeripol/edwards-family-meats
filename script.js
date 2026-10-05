@@ -316,7 +316,7 @@ function playMeatsAnimation() {
     }, 690);
 
 
-    /* SMALL GOODS */
+    /* SMALLGOODS */
 
     setTimeout(() => {
 
