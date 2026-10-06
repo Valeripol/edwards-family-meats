@@ -6843,3 +6843,591 @@ max-width: 32vw;
 
     opacity: 1;
 }
+/* =====================================================
+   NEWSLETTER — FINAL CLIENT VERSION
+===================================================== */
+
+@media (min-width: 901px) {
+
+    .hero-newsletter {
+        position: absolute;
+
+        left: 5%;
+        top: 29%;
+
+        width: 520px;
+        max-width: 34vw;
+
+        padding: 30px 34px;
+
+        z-index: 10;
+
+        color: #ffffff;
+
+        text-align: center;
+
+        background: rgba(5, 16, 25, 0.42);
+
+        border: 1px solid rgba(255, 255, 255, 0.10);
+        border-radius: 18px;
+
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+
+        box-shadow: 0 14px 34px rgba(0, 0, 0, 0.22);
+    }
+
+
+    .hero-newsletter h2 {
+        margin: 0 0 16px;
+
+        font-family: Georgia, "Times New Roman", serif;
+
+        font-size: 29px;
+        font-weight: 400;
+
+        line-height: 1.08;
+
+        color: #ffffff;
+
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+
+    .hero-newsletter p {
+        max-width: 430px;
+
+        margin: 0 auto 24px;
+
+        font-size: 15px;
+        line-height: 1.55;
+
+        color: rgba(255, 255, 255, 0.88);
+
+        text-align: center;
+    }
+
+
+    .newsletter-form {
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        gap: 12px;
+
+        width: 100%;
+
+        margin: 0;
+
+        flex-wrap: nowrap;
+    }
+
+
+    .newsletter-form input {
+        flex: 1;
+
+        min-width: 0;
+
+        height: 56px;
+
+        padding: 0 18px;
+
+        border: none;
+        border-radius: 9px;
+
+        outline: none;
+
+        background: rgba(255, 255, 255, 0.96);
+
+        color: #111111;
+
+        font-family: Arial, sans-serif;
+
+        font-size: 15px;
+    }
+
+
+    .newsletter-form input::placeholder {
+        color: #888888;
+    }
+
+
+    .newsletter-form button {
+        width: 170px;
+        height: 56px;
+
+        flex-shrink: 0;
+
+        border: none;
+        border-radius: 9px;
+
+        background: #c9a33d;
+
+        color: #051019;
+
+        font-family: Georgia, "Times New Roman", serif;
+
+        font-size: 13px;
+        font-weight: 700;
+
+        letter-spacing: 1.2px;
+
+        cursor: pointer;
+
+        transition:
+            background 0.25s ease,
+            transform 0.25s ease;
+    }
+
+
+    .newsletter-form button:hover {
+        background: #d8b34a;
+
+        transform: translateY(-2px);
+    }
+
+}
+
+
+/* =====================================================
+   NEWSLETTER — MOBILE
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .hero-newsletter {
+        position: absolute;
+
+        left: 20px;
+        right: 20px;
+
+        top: auto;
+        bottom: 35px;
+
+        width: auto;
+        max-width: none;
+
+        padding: 24px 22px;
+
+        text-align: center;
+
+        background: rgba(5, 16, 25, 0.48);
+
+        border: 1px solid rgba(255, 255, 255, 0.10);
+        border-radius: 16px;
+    }
+
+
+    .hero-newsletter h2 {
+        margin-bottom: 14px;
+
+        font-size: 24px;
+        line-height: 1.1;
+
+        text-align: center;
+    }
+
+
+    .hero-newsletter p {
+        margin: 0 auto 18px;
+
+        font-size: 14px;
+        line-height: 1.5;
+
+        text-align: center;
+    }
+
+
+    .newsletter-form {
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+
+    .newsletter-form input,
+    .newsletter-form button {
+        width: 100%;
+        height: 54px;
+    }
+
+}
+/* =====================================================
+   NEWSLETTER — REFERENCE POSITION
+===================================================== */
+
+@media (min-width: 901px) {
+
+    .hero-newsletter {
+        position: absolute;
+
+        left: 13% !important;
+        top: 17% !important;
+
+        width: 470px !important;
+        max-width: 31vw !important;
+
+        padding: 24px 28px !important;
+
+        color: #ffffff;
+        text-align: center;
+
+        background: rgba(5, 16, 25, 0.42) !important;
+
+        border: 1px solid rgba(255, 255, 255, 0.10) !important;
+        border-radius: 16px !important;
+
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
+
+        z-index: 10;
+    }
+
+
+    .hero-newsletter h2 {
+        margin: 0 0 12px !important;
+
+        font-size: 27px !important;
+        line-height: 1.05 !important;
+
+        text-align: center !important;
+    }
+
+
+    .hero-newsletter p {
+        max-width: 400px !important;
+
+        margin: 0 auto 18px !important;
+
+        font-size: 14px !important;
+        line-height: 1.45 !important;
+
+        text-align: center !important;
+    }
+
+
+    .newsletter-form {
+        display: flex !important;
+
+        justify-content: center !important;
+        align-items: center !important;
+
+        gap: 10px !important;
+
+        flex-wrap: nowrap !important;
+    }
+
+
+    .newsletter-form input {
+        height: 50px !important;
+
+        padding: 0 16px !important;
+
+        font-size: 14px !important;
+    }
+
+
+    .newsletter-form button {
+        width: 155px !important;
+        height: 50px !important;
+
+        background: #c9a33d !important;
+        color: #051019 !important;
+
+        font-size: 12px !important;
+        font-weight: 700 !important;
+
+        letter-spacing: 1.1px !important;
+    }
+
+}
+/* =====================================================
+   NEWSLETTER — FINAL POSITION + COMPACT HEIGHT
+===================================================== */
+
+@media (min-width: 901px) {
+
+    .hero-newsletter {
+        position: absolute !important;
+
+        /* ТОЧНО В ЗОНУ БЕЛОГО ПРЯМОУГОЛЬНИКА */
+        left: 13% !important;
+        top: 17% !important;
+
+        /* ВАЖНО: убираем старое растягивание вниз */
+        right: auto !important;
+        bottom: auto !important;
+
+        width: 470px !important;
+        max-width: 31vw !important;
+
+        height: auto !important;
+        min-height: 0 !important;
+
+        padding: 24px 28px !important;
+
+        text-align: center !important;
+
+        background: rgba(5, 16, 25, 0.42) !important;
+
+        border: 1px solid rgba(255, 255, 255, 0.10) !important;
+        border-radius: 16px !important;
+
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
+
+        z-index: 10;
+    }
+
+
+    .hero-newsletter h2 {
+        margin: 0 0 12px !important;
+
+        text-align: center !important;
+
+        font-size: 27px !important;
+        line-height: 1.05 !important;
+    }
+
+
+    .hero-newsletter p {
+        max-width: 400px !important;
+
+        margin: 0 auto 18px !important;
+
+        text-align: center !important;
+
+        font-size: 14px !important;
+        line-height: 1.45 !important;
+    }
+
+
+    .newsletter-form {
+        display: flex !important;
+
+        justify-content: center !important;
+        align-items: center !important;
+
+        gap: 10px !important;
+
+        margin: 0 !important;
+
+        flex-wrap: nowrap !important;
+    }
+
+
+    .newsletter-form input {
+        flex: 1 1 auto !important;
+
+        width: auto !important;
+        min-width: 0 !important;
+
+        height: 50px !important;
+        min-height: 50px !important;
+
+        padding: 0 16px !important;
+
+        font-size: 14px !important;
+    }
+
+
+    .newsletter-form button {
+        width: 155px !important;
+
+        height: 50px !important;
+        min-height: 50px !important;
+
+        flex-shrink: 0 !important;
+
+        background: #c9a33d !important;
+        color: #051019 !important;
+
+        font-size: 12px !important;
+        font-weight: 700 !important;
+
+        letter-spacing: 1.1px !important;
+    }
+
+}
+/* =====================================================
+   INTERACTIVE GOOGLE MAP
+===================================================== */
+
+.visit-map-interactive {
+    position: absolute;
+
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 320px;
+    height: 235px;
+
+    padding: 7px;
+
+    z-index: 6;
+
+    background: rgba(5, 16, 25, 0.60);
+
+    border: 1px solid rgba(255, 255, 255, 0.22);
+
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.30);
+
+    overflow: hidden;
+}
+
+
+.visit-map-interactive iframe {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    border: 0;
+
+    /* делаем Google Map темнее под дизайн сайта */
+    filter:
+        grayscale(1)
+        invert(0.92)
+        hue-rotate(180deg)
+        brightness(0.72)
+        contrast(1.08);
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .visit-map-interactive {
+        left: 22px;
+        right: 22px;
+
+        top: 25px;
+
+        width: auto;
+        height: 220px;
+
+        transform: none;
+    }
+
+}
+/* =========================================
+   CONTACT SEND BUTTON — GOLD
+========================================= */
+
+.contact-form button {
+    background: #c9a33d !important;
+    color: #051019 !important;
+
+    border: none !important;
+
+    font-weight: 700 !important;
+}
+
+.contact-form button:hover {
+    background: #d8b34a !important;
+}
+/* =========================================
+   KNIVES — KEEP ORIGINAL SVG COLORS
+========================================= */
+
+.ticker-icon img {
+    width: 38px !important;
+    height: 38px !important;
+
+    display: block !important;
+    object-fit: contain !important;
+
+    filter: none !important;
+    opacity: 1 !important;
+}
+/* =====================================================
+   MOBILE NEWSLETTER — EXTRA COMPACT
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .hero-newsletter {
+        left: 16px !important;
+        right: 16px !important;
+
+        bottom: 22px !important;
+
+        width: auto !important;
+        max-width: none !important;
+
+        height: auto !important;
+        min-height: 0 !important;
+
+        padding: 16px 14px !important;
+
+        border-radius: 14px !important;
+
+        text-align: center !important;
+    }
+
+    .hero-newsletter h2 {
+        margin: 0 0 9px !important;
+
+        font-size: 20px !important;
+        line-height: 1.05 !important;
+
+        text-align: center !important;
+    }
+
+    .hero-newsletter p {
+        margin: 0 auto 12px !important;
+
+        max-width: 360px !important;
+
+        font-size: 12px !important;
+        line-height: 1.4 !important;
+
+        text-align: center !important;
+    }
+
+    .newsletter-form {
+        display: flex !important;
+        flex-direction: column !important;
+
+        gap: 8px !important;
+
+        width: 100% !important;
+    }
+
+    .newsletter-form input {
+        width: 100% !important;
+
+        height: 40px !important;
+        min-height: 40px !important;
+
+        padding: 0 12px !important;
+
+        font-size: 14px !important;
+    }
+
+    .newsletter-form button {
+        width: 100% !important;
+
+        height: 42px !important;
+        min-height: 42px !important;
+
+        background: #c9a33d !important;
+        color: #051019 !important;
+
+        font-size: 12px !important;
+        font-weight: 700 !important;
+
+        letter-spacing: 1px !important;
+    }
+
+}

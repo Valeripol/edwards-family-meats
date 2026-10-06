@@ -56,34 +56,36 @@
     </nav>
 
 
-    <!-- NEWSLETTER FORM -->
+   <!-- NEWSLETTER FORM -->
 
-    <div class="hero-newsletter animate-on-scroll">
+<div class="hero-newsletter animate-on-scroll">
 
-        <h2>
-            SUBSCRIBE TO OUR NEWSLETTER
-        </h2>
+    <h2>
+        SUBSCRIBE TO OUR NEWSLETTER
+    </h2>
 
-        <p>
-            Subscribe to our weekly newsletter to receive recipes,
-            information on new products and limited release wines.
-        </p>
+    <p>
+        Subscribe to our newsletter to receive the latest specials,
+        information on new produce and chef-inspired recipes.
+    </p>
 
-        <form class="newsletter-form">
+    <form class="newsletter-form">
 
-            <input
-                type="email"
-                placeholder="Your email"
-                aria-label="Your email"
-            >
+        <input
+            type="email"
+            name="newsletter-email"
+            placeholder="Your email"
+            aria-label="Your email"
+            required
+        >
 
-            <button type="submit">
-                SUBSCRIBE
-            </button>
+        <button type="submit">
+            SUBSCRIBE
+        </button>
 
-        </form>
+    </form>
 
-    </div>
+</div>
 
 
     <!-- MOBILE MENU -->
@@ -412,20 +414,19 @@
     </div>
 
 
-    <!-- GOOGLE MAP LINK -->
-    <a
-        class="visit-map-link"
-        href="https://www.google.com/maps/search/?api=1&query=29+Mason+Street+Newport+VIC+3015"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Open Google Maps for 29 Mason Street, Newport VIC 3015"
-    >
-        <img
-            src="images/map.png"
-            alt="Map showing 29 Mason Street, Newport VIC 3015"
-            class="visit-map-image"
-        >
-    </a>
+    <!-- INTERACTIVE GOOGLE MAP -->
+
+<div class="visit-map-interactive">
+
+    <iframe
+        src="https://www.google.com/maps?q=29+Mason+Street,+Newport+VIC+3015&output=embed&hl=en"
+        title="29 Mason Street, Newport VIC 3015"
+        loading="lazy"
+        allowfullscreen
+        referrerpolicy="no-referrer-when-downgrade"
+    ></iframe>
+
+</div>
 
 </section>
 <!-- ======================================
