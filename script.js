@@ -6,8 +6,6 @@
 
 /* =====================================================
    WORD + LETTER SPLITTER
-   Слова не разрываются,
-   буквы внутри слова появляются отдельно
 ===================================================== */
 
 function splitTextIntoWordsAndLetters(element) {
@@ -32,8 +30,6 @@ function splitTextIntoWordsAndLetters(element) {
 
                 parts.forEach((part) => {
 
-                    /* ПРОБЕЛ */
-
                     if (/^\s+$/.test(part)) {
 
                         fragment.appendChild(
@@ -43,21 +39,14 @@ function splitTextIntoWordsAndLetters(element) {
                         return;
                     }
 
-
                     if (!part) {
                         return;
                     }
-
-
-                    /* ЦЕЛОЕ СЛОВО */
 
                     const word =
                         document.createElement("span");
 
                     word.className = "animated-word";
-
-
-                    /* БУКВЫ ВНУТРИ СЛОВА */
 
                     [...part].forEach((letter) => {
 
@@ -71,19 +60,13 @@ function splitTextIntoWordsAndLetters(element) {
                             letter;
 
                         word.appendChild(letterSpan);
-
                     });
 
-
                     fragment.appendChild(word);
-
                 });
 
-
                 child.replaceWith(fragment);
-
             }
-
 
             else if (
                 child.nodeType === Node.ELEMENT_NODE &&
@@ -91,13 +74,10 @@ function splitTextIntoWordsAndLetters(element) {
             ) {
 
                 processNode(child);
-
             }
 
         });
-
     }
-
 
     processNode(element);
 
@@ -118,7 +98,6 @@ function animateLetters(element, speed = 38) {
     const letters =
         element.querySelectorAll(".animated-letter");
 
-
     letters.forEach((letter, index) => {
 
         setTimeout(() => {
@@ -130,7 +109,6 @@ function animateLetters(element, speed = 38) {
         }, index * speed);
 
     });
-
 }
 
 
@@ -215,11 +193,7 @@ function playStoryAnimation() {
         return;
     }
 
-
     storySection.dataset.played = "true";
-
-
-    /* OUR STORY */
 
     setTimeout(() => {
 
@@ -229,8 +203,6 @@ function playStoryAnimation() {
 
     }, 120);
 
-
-    /* A LOCAL TRADITION */
 
     setTimeout(() => {
 
@@ -242,8 +214,6 @@ function playStoryAnimation() {
     }, 420);
 
 
-    /* QUALITY MEATS */
-
     setTimeout(() => {
 
         storySubtitle?.classList.add(
@@ -252,8 +222,6 @@ function playStoryAnimation() {
 
     }, 1450);
 
-
-    /* PARAGRAPH */
 
     setTimeout(() => {
 
@@ -279,11 +247,7 @@ function playMeatsAnimation() {
         return;
     }
 
-
     meatsSection.dataset.played = "true";
-
-
-    /* OUR MEATS */
 
     setTimeout(() => {
 
@@ -294,8 +258,6 @@ function playMeatsAnimation() {
     }, 100);
 
 
-    /* MEAT */
-
     setTimeout(() => {
 
         meatCards?.[0]?.classList.add(
@@ -305,8 +267,6 @@ function playMeatsAnimation() {
     }, 420);
 
 
-    /* FISH */
-
     setTimeout(() => {
 
         meatCards?.[1]?.classList.add(
@@ -315,8 +275,6 @@ function playMeatsAnimation() {
 
     }, 690);
 
-
-    /* SMALLGOODS */
 
     setTimeout(() => {
 
@@ -342,11 +300,7 @@ function playVisitAnimation() {
         return;
     }
 
-
     visitSection.dataset.played = "true";
-
-
-    /* VISIT US */
 
     setTimeout(() => {
 
@@ -356,8 +310,6 @@ function playVisitAnimation() {
 
     }, 100);
 
-
-    /* EDWARDS FAMILY MEATS / NEWPORT */
 
     setTimeout(() => {
 
@@ -369,8 +321,6 @@ function playVisitAnimation() {
     }, 420);
 
 
-    /* ADDRESS */
-
     setTimeout(() => {
 
         visitContacts?.[0]?.classList.add(
@@ -379,8 +329,6 @@ function playVisitAnimation() {
 
     }, 1550);
 
-
-    /* PHONE */
 
     setTimeout(() => {
 
@@ -391,8 +339,6 @@ function playVisitAnimation() {
     }, 1800);
 
 
-    /* WEBSITE */
-
     setTimeout(() => {
 
         visitContacts?.[2]?.classList.add(
@@ -401,8 +347,6 @@ function playVisitAnimation() {
 
     }, 2050);
 
-
-    /* FACEBOOK + INSTAGRAM */
 
     setTimeout(() => {
 
@@ -430,25 +374,16 @@ const sectionObserver =
                     return;
                 }
 
-
                 if (entry.target.id === "story") {
-
                     playStoryAnimation();
-
                 }
-
 
                 if (entry.target.id === "meats") {
-
                     playMeatsAnimation();
-
                 }
 
-
                 if (entry.target.id === "visit") {
-
                     playVisitAnimation();
-
                 }
 
             });
@@ -467,15 +402,78 @@ if (storySection) {
     sectionObserver.observe(storySection);
 }
 
-
 if (meatsSection) {
     sectionObserver.observe(meatsSection);
 }
 
-
 if (visitSection) {
     sectionObserver.observe(visitSection);
 }
+
+
+/* =====================================================
+   HERO NEWSLETTER ANIMATION
+===================================================== */
+
+const heroNewsletter =
+    document.querySelector(".hero-newsletter");
+
+if (heroNewsletter) {
+
+    setTimeout(() => {
+
+        heroNewsletter.classList.add("show");
+
+    }, 700);
+
+}
+
+
+/* =====================================================
+   CONTACT FORM ANIMATION
+===================================================== */
+
+const contactFormRevealElement =
+    document.querySelector(".contact-reveal");
+
+if (contactFormRevealElement) {
+
+    const contactFormObserver =
+        new IntersectionObserver(
+
+            (entries) => {
+
+                entries.forEach((entry) => {
+
+                    if (!entry.isIntersecting) {
+                        return;
+                    }
+
+                    entry.target.classList.add(
+                        "contact-visible"
+                    );
+
+                    contactFormObserver.unobserve(
+                        entry.target
+                    );
+
+                });
+
+            },
+
+            {
+                threshold: 0.2,
+                rootMargin: "0px 0px -8% 0px"
+            }
+
+        );
+
+    contactFormObserver.observe(
+        contactFormRevealElement
+    );
+}
+
+
 /* =====================================================
    MOBILE BURGER MENU
 ===================================================== */
@@ -490,15 +488,18 @@ const mobileMenuClose =
     document.querySelector(".mobile-menu-close");
 
 const mobileMenuLinks =
-    document.querySelectorAll(".mobile-menu-inner a");
+    document.querySelectorAll(
+        ".mobile-menu-inner a"
+    );
 
 
 function openMobileMenu() {
 
     mobileMenu?.classList.add("open");
 
-    document.body.classList.add("menu-open");
-
+    document.body.classList.add(
+        "menu-open"
+    );
 }
 
 
@@ -506,8 +507,9 @@ function closeMobileMenu() {
 
     mobileMenu?.classList.remove("open");
 
-    document.body.classList.remove("menu-open");
-
+    document.body.classList.remove(
+        "menu-open"
+    );
 }
 
 
@@ -530,8 +532,6 @@ mobileMenuLinks.forEach((link) => {
         const href =
             link.getAttribute("href");
 
-        /* ORDERS пока не ведёт никуда */
-
         if (href === "#") {
             return;
         }
@@ -542,8 +542,6 @@ mobileMenuLinks.forEach((link) => {
 
 });
 
-
-/* ESC closes menu */
 
 document.addEventListener(
     "keydown",
@@ -557,46 +555,64 @@ document.addEventListener(
 
     }
 );
+
+
 /* =====================================================
    MOBILE SCROLL REVEAL
 ===================================================== */
 
-if (window.matchMedia("(max-width: 700px)").matches) {
+if (
+    window.matchMedia(
+        "(max-width: 700px)"
+    ).matches
+) {
 
-    const mobileSections = document.querySelectorAll(
-        ".hero, .story, .meats, .visit-banner"
-    );
+    const mobileSections =
+        document.querySelectorAll(
+            ".hero, .story, .meats, .visit-banner"
+        );
 
-    const mobileObserver = new IntersectionObserver(
-        (entries) => {
+    const mobileObserver =
+        new IntersectionObserver(
 
-            entries.forEach((entry) => {
+            (entries) => {
 
-                if (entry.isIntersecting) {
+                entries.forEach((entry) => {
 
-                    entry.target.classList.add(
-                        "mobile-visible"
-                    );
+                    if (
+                        entry.isIntersecting
+                    ) {
 
-                    mobileObserver.unobserve(
-                        entry.target
-                    );
-                }
+                        entry.target.classList.add(
+                            "mobile-visible"
+                        );
 
-            });
+                        mobileObserver.unobserve(
+                            entry.target
+                        );
 
-        },
-        {
-            threshold: 0.15,
-            rootMargin: "0px 0px -8% 0px"
+                    }
+
+                });
+
+            },
+
+            {
+                threshold: 0.15,
+                rootMargin: "0px 0px -8% 0px"
+            }
+
+        );
+
+
+    mobileSections.forEach(
+        (section) => {
+
+            mobileObserver.observe(
+                section
+            );
+
         }
     );
-
-
-    mobileSections.forEach((section) => {
-
-        mobileObserver.observe(section);
-
-    });
 
 }
